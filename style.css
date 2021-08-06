@@ -1,0 +1,86 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-style: italic;
+	font-family: cursive;
+}
+html,body{
+	display: grid;
+	height: 100%;
+	place-items:center;
+	background: #111;
+}
+.center{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.part{
+	position: relative;
+	margin: 0 100px;
+	background: linear-gradient(#14ffe9,#ffeb3b,#ff00e0);
+}
+.part button{
+	background: #222;
+	color: #f2f2f2;
+	outline: none;
+	border: none;
+	font-size: 18px;
+	letter-spacing: 1.2px;
+	z-index: 9;
+}
+.button{
+	height: 70px;
+	width: 220px;
+	border-radius: 50px;
+}
+.button button{
+	height: 60px;
+	width: 210px;
+	border-radius: 50px;
+}
+.circle{
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+}
+.circle button{
+	height: 180px;
+	width: 180px;
+	border-radius: 50%;
+}
+.part button, .part span{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.part span{
+	height: 100%;
+	width: 100%;
+	background: inherit;
+}
+.part.button span{
+	border-radius: 50px;
+}
+.part.circle span{
+	border-radius: 50%;
+}
+.part:hover span:nth-child(1){
+	filter: blur(7px);
+}
+.part:hover span:nth-child(2){
+	filter: blur(14px);
+}
+.part:hover{
+   animation: rotate 1.5s linear infinite;
+}
+@keyframes rotate{
+	0%{
+		filter: hue-rotate(0deg);
+	}
+	100%{
+		filter: hue-rotate(360deg);
+	}
+}
